@@ -1,0 +1,13 @@
+//Адаптивный файл
+@import "adaptive";
+
+$color_bg: #202020;
+$color_start_bg: #E5E5E5;
+$color_start_text: rgba(255, 255, 255, 0.75);
+$color_text: #FFFFFF;
+$color_accent: rgba(255, 0, 0, 0.75);
+
+$maxWidthContainer: 1920px;
+$maxWidth: 100vw;
+$middleWidth: 768px;
+$minWidth: 414px;

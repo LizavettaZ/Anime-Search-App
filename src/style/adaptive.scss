@@ -1,0 +1,22 @@
+@mixin adaptive-value($property, $mainSize, $minSize, $type) {
+  $addSize: $mainSize - $minSize;
+  @if $type==1 {
+    //Меньше контейнера
+    #{$property}: $mainSize + px;
+    @media (max-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+    }
+  }
+  @else if $type==2 {
+    //Больше контейнера
+    #{$property}: $mainSize + px;
+    @media (max-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+    }
+  }
+  @else {
+    //Всегда
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+  }
+}
+
