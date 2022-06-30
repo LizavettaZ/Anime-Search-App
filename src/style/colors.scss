@@ -1,0 +1,11 @@
+$color_bg: #202020;
+$color_about_bg: rgba(44, 44, 44, 0.75);
+$color_about_text: rgba(255, 255, 255, 0.75);
+$color_text: #FFFFFF;
+$color_text_shadow: rgba(255, 255, 255, 0.25);
+$color_accent: #FF0000;
+$color_accent_75: rgba(255, 0, 0, 0.75);
+$color_border: #000000;
+
+%red_background{
+background: radial-gradient(97.61% 55.99% at 50.15% 44.01%, rgba(255, 0, 0, 0.69) 0%, #790303 100%);}

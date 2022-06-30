@@ -1,0 +1,25 @@
+@import "adaptive";
+@import "nonestyle";
+@import "colors";
+@import "sizes";
+
+.Header{
+  position: fixed;
+  width: 100vw;
+  height: 140px;
+  display: flex;
+  align-items: end;
+  padding-bottom: 20px;
+  padding-left: 16px;
+  border-bottom: 1px solid $color_accent_75;
+
+  .header__img{
+    display: flex;
+    flex: 0 1 100px;
+  }
+
+  & p{
+    @include adaptive-value(font-size, 30, 18, 1);
+    @include adaptive-value(line-height, 38, 22, 1);
+  }
+}

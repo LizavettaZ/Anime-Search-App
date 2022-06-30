@@ -1,0 +1,13 @@
+@import "adaptive";
+@import "colors";
+@import "sizes";
+@import "nonestyle";
+
+.HomeCard{
+  display: flex;
+  flex: 0 1 393px;
+  //@include adaptive-value(width, 393, 200, 1);
+  //height: 594px;
+  border-radius: 30px;
+  background: $color_text;
+}

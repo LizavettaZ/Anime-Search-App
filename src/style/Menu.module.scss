@@ -1,0 +1,48 @@
+//Адаптивный файл
+@import "adaptive";
+@import "colors";
+@import "nonestyle";
+@import "sizes";
+
+.NavMenu{
+  background-color: transparent;
+  white-space: nowrap;
+  z-index: 2;
+  position: fixed;
+  max-height: 44px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  @include adaptive-value(padding-top, 14, 10, 1);
+  @include adaptive-value(padding-bottom, 14, 10, 1);
+  @include adaptive-value(padding-right, 123, 80, 1);
+  @include adaptive-value(padding-left, 123, 80, 1);
+}
+
+.NavMenu ul{
+  display: flex;
+  align-items: center;
+  gap: 0 10px;
+}
+
+.NavMenu ul p{
+  width: 23px;
+  height: 0;
+  border: 1px solid $color_text;
+  transform: rotate(90deg);
+}
+
+.NavMenu ul li{
+  color: $color_text;
+  @include adaptive-value(font-size, 15, 12, 1);
+  @include adaptive-value(line-height, 19, 12, 1);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.NavMenu ul li a{
+  &:hover{
+    color: $color_accent;
+  }
+}

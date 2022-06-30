@@ -1,0 +1,30 @@
+@import "adaptive";
+@import "colors";
+@import "sizes";
+@import "nonestyle";
+
+.Home{
+  padding-top: 145px;
+  display: flex;
+  flex: 0 1 100%;
+}
+
+.home__content{
+  padding-top: 110px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 100%;
+
+  .content__list{
+    display: flex;
+    justify-content: center;
+    gap: 0 66px;
+    margin-bottom: 90px;
+  }
+
+  .content__btn{
+    display: flex;
+    justify-content: center;
+  }
+}

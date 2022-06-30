@@ -1,0 +1,38 @@
+@import "adaptive";
+@import "colors";
+@import "sizes";
+
+%style_btn_hover{
+  background-color: $color_accent_75;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+%style_btn_active{
+  background-color: $color_accent;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.Button{
+  white-space: nowrap;
+
+  .button__link{
+    @include adaptive-value(font-size, 25, 14, 1);
+    @include adaptive-value(line-height, 32, 20, 1);
+    @include adaptive-value(padding-right, 41, 20, 1);
+    @include adaptive-value(padding-left, 41, 20, 1);
+    @include adaptive-value(padding-top, 10, 10, 1);
+    @include adaptive-value(padding-bottom, 10, 10, 1);
+    @extend %red_background;
+    border: 1px solid $color_border;
+    border-radius: 10px;
+
+    &:hover{
+      @extend %style_btn_hover;
+    }
+
+    &:active{
+      @extend %style_btn_active
+    }
+  }
+}
+

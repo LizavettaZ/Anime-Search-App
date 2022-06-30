@@ -7,18 +7,8 @@
 //Подключение шрифтов
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
-//Переменные
-$color_bg: #202020;
-$color_start_bg: #E5E5E5;
-$color_start_text: rgba(255, 255, 255, 0.75);
-$color_text: #FFFFFF;
-$color_accent: rgba(255, 0, 0, 0.75);
-
-
-$maxWidthContainer: 940;
-$maxWidth: 1920;
-$middleWidth: 768px;
-$minWidth: 414px;
+@import "colors";
+@import "sizes";
 
 *{
   font-family: 'Audiowide', cursive;
@@ -29,8 +19,10 @@ $minWidth: 414px;
 }
 
 body{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+}
+.App{
+
+
 }
 

@@ -1,13 +1,52 @@
-//Адаптивный файл
 @import "adaptive";
+@import "colors";
+@import "sizes";
+@import "nonestyle";
 
-$color_bg: #202020;
-$color_start_bg: #E5E5E5;
-$color_start_text: rgba(255, 255, 255, 0.75);
-$color_text: #FFFFFF;
-$color_accent: rgba(255, 0, 0, 0.75);
+.About{
+  @include adaptive-value(padding-right, 70, 30, 1);
+  @include adaptive-value(padding-left, 70, 30, 1);
+  @include adaptive-value(padding-top, 80, 40, 1);
+  @include adaptive-value(padding-bottom, 12, 10, 1);
+  text-align: left;
+}
 
-$maxWidthContainer: 1920px;
-$maxWidth: 100vw;
-$middleWidth: 768px;
-$minWidth: 414px;
+.about__title{
+  color: $color_text;
+  @include adaptive-value(font-size, 70, 20, 1);
+  @include adaptive-value(line-height, 89, 20, 1);
+  @include adaptive-value(margin-bottom, 30, 20, 1);
+  text-shadow: 20px 20px 4px $color_text_shadow;
+}
+
+.about__content{
+  display: flex;
+}
+
+.content__description{
+  flex: 0 1 60%;
+}
+
+.description__text {
+  @include adaptive-value(padding-top, 45, 20, 1);
+  & p {
+    @include adaptive-value(margin-bottom, 72, 30, 1);
+    @include adaptive-value(font-size, 25, 12, 1);
+    @include adaptive-value(line-height, 32, 22, 1);
+    color: $color_about_text;
+  }
+}
+
+.description__btn{
+  @include adaptive-value(padding-bottom, 222, 30, 1);
+}
+
+.content__img{
+  display: flex;
+  align-items: center;
+  @include adaptive-value(margin-left, 100, 0, 1);
+
+  & img {
+    @include adaptive-value(width, 469, 250, 1);
+  }
+}

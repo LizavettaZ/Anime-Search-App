@@ -1,0 +1,60 @@
+@import "adaptive";
+@import "colors";
+@import "sizes";
+@import "nonestyle";
+
+.Contact{
+  display: flex;
+  @include adaptive-value(padding-right, 170, 60, 1);
+  @include adaptive-value(padding-left, 170, 60, 1);
+  @include adaptive-value(padding-top, 80, 60, 1);
+  @include adaptive-value(padding-bottom, 12, 10, 1);
+  text-align: left;
+  //background: radial-gradient(97.61% 55.99% at 50.15% 44.01%, rgba(255, 0, 0, 0.69) 0%, rgba(255, 0, 0, 1) 100%)
+  align-items: center;
+  gap: 0 100px;
+}
+
+.contact__description{
+  flex: 0 1 50%;
+}
+
+.description__title{
+  color: $color_text;
+  @include adaptive-value(font-size, 80, 20, 1);
+  @include adaptive-value(line-height, 89, 20, 1);
+  @include adaptive-value(margin-bottom, 40, 25, 1);
+  text-shadow: 20px 20px 4px $color_text_shadow;
+}
+
+.description__text {
+  @include adaptive-value(font-size, 25, 12, 1);
+  @include adaptive-value(line-height, 32, 22, 1);
+  color: $color_about_text;
+  margin-bottom: 40px;
+}
+
+.description__links{
+  white-space: nowrap;
+
+  & a:nth-child(2n){
+    @include adaptive-value(padding-right, 20, 10, 1);
+    @include adaptive-value(padding-left, 20, 10, 1);
+  }
+}
+
+.description__email{
+  @include adaptive-value(font-size, 35, 20, 1);
+  @include adaptive-value(line-height, 40, 22, 1);
+  margin-bottom: 20px;
+
+  & a:hover{
+    color: $color_accent;
+    text-decoration: underline;
+  }
+}
+
+.contact__form{
+  flex: 0 1 50%;
+
+}
