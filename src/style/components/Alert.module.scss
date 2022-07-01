@@ -1,0 +1,33 @@
+@import "src/style/adaptive";
+@import "src/style/colors";
+@import "src/style/sizes";
+@import "src/style/nonestyle";
+
+.Alert{
+  position: absolute;
+  min-width: 235px;
+  display: flex;
+  justify-content: space-between;
+  top: 230px;
+  left: 25%;
+  width: 50%;
+  padding: 10px 20px;
+  @extend %red_background;
+  color: white;
+}
+
+.btnClose{
+  background-color: inherit;
+  display: flex;
+  align-items: center;
+
+  & span{
+    background-color: inherit;
+    font-size: 30px;
+    line-height: 0;
+  }
+
+  &:hover{
+    cursor: pointer;
+  }
+}
