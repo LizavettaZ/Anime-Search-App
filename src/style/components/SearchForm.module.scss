@@ -1,0 +1,54 @@
+@import "src/style/adaptive";
+@import "src/style/colors";
+@import "src/style/sizes";
+@import "src/style/nonestyle";
+
+.SearchForm{
+  display: flex;
+  @include adaptive-value(width, 1000, 235, 1);
+  min-width: 235px;
+  flex: 0 1 100%;
+  align-items: center;
+  position: relative;
+  margin: 30px auto 100px;
+
+  &:before{
+    background-image: url("../../img/icons/Vector.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: absolute;
+    top: 13%;
+    left: 5px;
+    height: 30px;
+    width: 35px;
+    content: "";
+    z-index: 100;
+  }
+}
+
+.search_form__input{
+  background: $color_text;
+  border-radius: 20px;
+  font-size: 23px;
+  height: 37px;
+  width: 100%;
+  padding-left: 45px;
+  color: $color_border;
+
+  &:focus{
+    box-shadow: $color_accent_75 0 2px 30px 2px;
+  }
+
+  &:focus::placeholder{
+    color: $color_text;
+  }
+
+  &::placeholder{
+    color: $color_border;
+  }
+}
+
+
+
+
+
