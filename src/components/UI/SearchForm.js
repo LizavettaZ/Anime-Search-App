@@ -1,20 +1,24 @@
 import React, {useContext, useState} from 'react'
 import classes from '../../style/components/SearchForm.module.scss'
-import {AlertContext} from "../../context/alert/alertContext";
-
+import {AlertContext} from '../../context/alert/alertContext'
+import {RequestContext} from '../../context/request/requestContect'
 
 const SearchForm = () => {
   const [value, setValue] = useState('')
-  const {show} = useContext(AlertContext)
+  const alert = useContext(AlertContext)
+  const request = useContext(RequestContext)
 
   const onSubmit = (event) => {
     if (event.key !== 'Enter') {
       return
     }
-    if (value.trim()){
-      console.log(value)
+    request.clearList()
+
+    if (value.trim()) {
+      alert.hide()
+      request.search(value.trim())
     } else {
-      show('Enter Anime name')
+      alert.show('Enter Anime name')
     }
   }
 

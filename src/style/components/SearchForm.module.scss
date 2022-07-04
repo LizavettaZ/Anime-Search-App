@@ -1,7 +1,7 @@
 @import "src/style/adaptive";
 @import "src/style/colors";
 @import "src/style/sizes";
-@import "src/style/nonestyle";
+
 
 .SearchForm{
   display: flex;
@@ -22,7 +22,6 @@
     height: 30px;
     width: 35px;
     content: "";
-    z-index: 100;
   }
 }
 
