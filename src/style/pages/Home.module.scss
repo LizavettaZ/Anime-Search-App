@@ -1,7 +1,6 @@
-@import "adaptive";
-@import "colors";
-@import "sizes";
-@import "nonestyle";
+@import "src/style/adaptive";
+@import "src/style/colors";
+@import "src/style/sizes";
 
 .Home{
   padding-top: 145px;
@@ -10,7 +9,7 @@
 }
 
 .home__content{
-  padding-top: 110px;
+  @include adaptive-value(padding-top, 110, 10, 1);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -19,8 +18,9 @@
   .content__list{
     display: flex;
     justify-content: center;
-    gap: 0 66px;
+    gap: 20px 66px;
     margin-bottom: 90px;
+    flex-wrap: wrap;
   }
 
   .content__btn{
