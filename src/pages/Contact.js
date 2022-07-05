@@ -1,9 +1,9 @@
 import React from 'react'
-import classes from '../style/Contact.module.scss'
+import classes from '../style/pages/Contact.module.scss'
 import Instagram from '../img/icons/Instagram.svg'
 import Git from '../img/icons/Git.svg'
 import LinkedIn from '../img/icons/LinkedIn.svg'
-import Form from "../components/UI/Form";
+import Form from '../components/UI/Form'
 
 
 const Contact = () => {
@@ -42,4 +42,4 @@ const Contact = () => {
   )
 }
 
-export default Contact;
+export default Contact

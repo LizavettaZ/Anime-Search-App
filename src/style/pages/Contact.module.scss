@@ -1,7 +1,6 @@
-@import "adaptive";
-@import "colors";
-@import "sizes";
-@import "nonestyle";
+@import "src/style/adaptive";
+@import "src/style/colors";
+@import "src/style/sizes";
 
 .Contact{
   display: flex;
@@ -10,7 +9,6 @@
   @include adaptive-value(padding-top, 80, 60, 1);
   @include adaptive-value(padding-bottom, 12, 10, 1);
   text-align: left;
-  //background: radial-gradient(97.61% 55.99% at 50.15% 44.01%, rgba(255, 0, 0, 0.69) 0%, rgba(255, 0, 0, 1) 100%)
   align-items: center;
   gap: 0 100px;
 }
@@ -56,5 +54,4 @@
 
 .contact__form{
   flex: 0 1 50%;
-
 }
