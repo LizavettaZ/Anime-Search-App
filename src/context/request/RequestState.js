@@ -1,39 +1,41 @@
-import React, {useReducer} from 'react'
-import {RequestContext} from './requestContect'
-import {requestReducer} from './requestReducer'
-import {CLEAR_ANIME, GET_ANIME, GET_LINKS, GET_POPULAR_ANIME, GET_REPOS, SEARCH_ANIME_LIST, SET_LOADING} from '../types'
-import axios from "axios";
+import React, { useReducer } from 'react'
+import { RequestContext } from './requestContect'
+import { requestReducer } from './requestReducer'
+import { CLEAR_ANIME, GET_ANIME, GET_LINKS, GET_POPULAR_ANIME, SEARCH_ANIME_LIST, SET_LOADING } from '../types'
+import axios from 'axios'
 
-const RequestState = ({children}) => {
+const RequestState = ({ children }) => {
   const initialState = {
     anime: {},
     popularAnime: [],
     animeList: [],
     links: {},
-    loading: false,
-    repos: []
+    loading: false
   }
   const [state, dispatch] = useReducer(requestReducer, initialState)
 
-  const {animeList, popularAnime, anime, links, loading, repos} = state
+  const { animeList, popularAnime, anime, links, loading } = state
 
   const getPopularAnime = async (limit= 10) => {
-    setLoading()
     try{
+      setLoading(true)
       const response = await axios.get(`https://kitsu.io/api/edge/trending/anime?limit=${limit}`)
 
       dispatch({
         type: GET_POPULAR_ANIME,
         payload: response.data.data
       })
+      setLoading(false)
+
     } catch (e) {
       console.log(e)
+      setLoading(false)
     }
   }
 
   const search = async (value) => {
-    setLoading()
     try{
+      setLoading(true)
       const response = await axios.get(`https://kitsu.io/api/edge/anime?filter[text]=${value}`)
 
       dispatch({
@@ -45,49 +47,39 @@ const RequestState = ({children}) => {
         type: GET_LINKS,
         payload: response.data.links
       })
+      setLoading(false)
+
     } catch (e) {
       console.log(e)
+      setLoading(false)
     }
   }
 
-  const getAnime = async (slug) => {
-    setLoading()
+  const getAnime = async (id) => {
     try{
-      const response = await axios.get(`https://kitsu.io/api/edge/anime/${slug}`)
-        .then(r => {
-          console.log(r)
-        })
+      setLoading(true)
+      const response = await axios.get(`https://kitsu.io/api/edge/anime/${id}`)
 
       dispatch({
         type: GET_ANIME,
-        payload: {}
+        payload: response.data.data.attributes
       })
+      setLoading(false)
+
     } catch (e) {
       console.log(e)
+      setLoading(false)
     }
   }
 
-  const getRepos = async (slug) => {
-    setLoading()
-    try{
+  const clearList = () => dispatch({ type: CLEAR_ANIME })
 
-      dispatch({
-        type: GET_REPOS,
-        payload: {}
-      })
-    } catch (e) {
-      console.log(e)
-    }
-  }
-
-  const clearList = () => dispatch({type: CLEAR_ANIME})
-
-  const setLoading = () => dispatch({type: SET_LOADING})
+  const setLoading = (payload) => dispatch({ type: SET_LOADING, payload: payload })
 
   return (
     <RequestContext.Provider value={{
-      getPopularAnime, search, getAnime, getRepos, clearList, setLoading,
-      popularAnime, animeList, anime, links, loading, repos
+      getPopularAnime, search, getAnime, clearList, setLoading,
+      popularAnime, animeList, anime, links, loading
     }}>
       {children}
     </RequestContext.Provider>
