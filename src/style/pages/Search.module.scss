@@ -1,0 +1,24 @@
+@import "src/style/adaptive";
+@import "src/style/colors";
+@import "src/style/sizes";
+
+.Search{
+  position: relative;
+  padding-top: 145px;
+  display: flex;
+  flex: 0 1 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search__list{
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(5, 285px);
+  grid-template-rows: repeat(2, minmax(400px, 1fr));
+  gap: 30px;
+  
+  @media (max-width: $middleWidth) {
+    grid-template-columns: repeat(3, 285px);
+  }
+}

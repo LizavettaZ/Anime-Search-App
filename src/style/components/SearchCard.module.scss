@@ -1,0 +1,50 @@
+@import "src/style/adaptive";
+@import "src/style/colors";
+@import "src/style/sizes";
+
+.SearchCard{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+
+  &Link{
+    display: flex;
+    flex-wrap: wrap;
+    color: #2778b2;
+
+    &:hover{
+      color: $color_accent !important;
+    }
+  }
+}
+
+.card__img{
+  position: relative;
+
+  &img{
+
+  }
+
+}
+
+.rating{
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 20px;
+  padding-right: 6px;
+  border-radius: 0 0 10px 0;
+  &:before{
+    height: 20px;
+    left: 1px;
+    background-image: url("../../img/icons/Star.svg");
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    position: absolute;
+    width: 20px;
+    content: "";
+  }
+}
