@@ -1,7 +1,6 @@
-@import "adaptive";
-@import "colors";
-@import "sizes";
-@import "nonestyle";
+@import "src/style/adaptive";
+@import "src/style/colors";
+@import "src/style/sizes";
 
 .About{
   @include adaptive-value(padding-right, 70, 30, 1);

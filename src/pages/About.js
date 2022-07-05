@@ -1,7 +1,7 @@
 import React from 'react'
-import classes from '../style/About.module.scss'
+import classes from '../style/pages/About.module.scss'
 import phone from '../img/About/phone.png'
-import Button from "../components/UI/Button";
+import Button from '../components/UI/Button'
 
 const About = () => {
   return (
@@ -26,7 +26,7 @@ const About = () => {
           </div>
         </div>
         <div className={classes.content__img}>
-          <img src={phone} alt = "logo"/>
+          <img src={phone} alt="logo"/>
         </div>
       </div>
     </div>
