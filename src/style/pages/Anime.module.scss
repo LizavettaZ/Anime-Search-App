@@ -1,0 +1,9 @@
+@import "src/style/adaptive";
+@import "src/style/colors";
+@import "src/style/sizes";
+
+.Anime{
+  padding: 175px 30px 10px;
+  display: flex;
+  flex: 0 1 100%;
+}

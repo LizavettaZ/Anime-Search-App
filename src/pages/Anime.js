@@ -1,11 +1,31 @@
-import React from 'react'
+import React, { Fragment, useContext, useEffect, memo } from 'react'
+import classes from '../style/pages/Anime.module.scss'
+import Header from '../components/UI/Header'
+import Loader from '../components/UI/Loader'
+import { RequestContext } from '../context/request/requestContect'
+import { useParams } from 'react-router-dom'
+import AnimeCard from '../components/AnimeCard'
+
 
 const Anime = () => {
-  return (
-    <div>
-      <h1>Anime page</h1>
-    </div>
-  );
-};
+  const { id } = useParams()
+  const { getAnime, loading, anime } = useContext(RequestContext)
 
-export default Anime;
+  useEffect( () => {
+    getAnime(id.slice(1))
+  },[])
+
+  return (
+    <Fragment>
+      <Header zIndex={1}/>
+      <div className={classes.Anime}>
+        {loading
+          ? <Loader />
+          : <AnimeCard anime={anime}/>
+        }
+      </div>
+    </Fragment>
+  )
+}
+
+export default memo(Anime)
