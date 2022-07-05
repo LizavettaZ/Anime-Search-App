@@ -1,0 +1,8 @@
+export const SHOW_ALERT = 'SHOW-ALERT'
+export const HIDE_ALERT = 'HIDE-ALERT'
+export const SEARCH_ANIME_LIST = 'SEARCH_ANIME_LIST'
+export const GET_POPULAR_ANIME = 'GET_POPULAR_ANIME'
+export const GET_ANIME = 'GET_ANIME'
+export const GET_LINKS = 'GET_LINKS'
+export const CLEAR_ANIME = 'CLEAR_ANIME'
+export const SET_LOADING = 'SET_LOADING'
