@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import classes from './style/App.module.scss'
 import NavMenu from './components/UI/Menu/NavMenu'
 import Home from './pages/Home'
@@ -22,7 +22,8 @@ function App() {
               <Route path='/search' element={<Search/>}/>
               <Route path='/about' element={<About/>}/>
               <Route path='/contact' element={<Contact/>}/>
-              <Route path='/profile/slug' element={<Anime/>}/>
+              <Route path='/anime/:id' element={<Anime/>}/>
+              <Route path='/search/anime/:id' element={<Anime/>}/>
             </Routes>
           </div>
         </BrowserRouter>

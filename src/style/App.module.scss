@@ -1,12 +1,6 @@
-//Адаптивный файл
 @import "adaptive";
-
-//Обнуляющий файл
 @import "nonestyle";
-
-//Подключение шрифтов
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
 @import "colors";
 @import "sizes";
 
@@ -16,13 +10,5 @@
   font-weight: 400;
   background-color: $color_bg;
   color: $color_text;
-}
-
-body{
-
-}
-.App{
-
-
 }
 
