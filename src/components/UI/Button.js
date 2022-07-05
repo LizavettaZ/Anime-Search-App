@@ -1,6 +1,6 @@
 import React from 'react'
-import classes from '../../style/Button.module.scss'
-import {NavLink} from "react-router-dom"
+import classes from '../../style/components/Button.module.scss'
+import { NavLink } from 'react-router-dom'
 
 const Button = () => {
   return (
