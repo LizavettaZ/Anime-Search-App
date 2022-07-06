@@ -1,7 +1,7 @@
-import React, {useContext, useState} from 'react'
+import React, { useCallback, useContext, useState } from 'react'
 import classes from '../../style/components/SearchForm.module.scss'
-import {AlertContext} from '../../context/alert/alertContext'
-import {RequestContext} from '../../context/request/requestContect'
+import { AlertContext } from '../../context/alert/alertContext'
+import { RequestContext } from '../../context/request/requestContect'
 
 const SearchForm = () => {
   const [value, setValue] = useState('')
@@ -21,6 +21,7 @@ const SearchForm = () => {
       alert.show('Enter Anime name')
     }
   }
+  const onChange = useCallback(event => setValue(event.target.value), [])
 
   return (
     <div className={classes.SearchForm} >
@@ -29,7 +30,7 @@ const SearchForm = () => {
         className={classes.search_form__input}
         placeholder="Search Anime"
         value={value}
-        onChange={event => setValue(event.target.value)}
+        onChange={onChange}
         onKeyPress={onSubmit}
       />
     </div>
