@@ -1,8 +1,10 @@
 import React, { useReducer } from 'react'
 import { RequestContext } from './requestContect'
 import { requestReducer } from './requestReducer'
-import { CLEAR_ANIME, GET_ANIME, GET_LINKS, GET_POPULAR_ANIME, SEARCH_ANIME_LIST, SET_LOADING } from '../types'
+import { CLEAR_ANIME, GET_ANIME, NOT_FOUND, GET_LINKS, GET_POPULAR_ANIME, SEARCH_ANIME_LIST,
+  SET_LOADING, GET_ANIME_MORE } from '../types'
 import axios from 'axios'
+
 
 const RequestState = ({ children }) => {
   const initialState = {
@@ -10,11 +12,12 @@ const RequestState = ({ children }) => {
     popularAnime: [],
     animeList: [],
     links: {},
-    loading: false
+    loading: false,
+    notFound: false
   }
   const [state, dispatch] = useReducer(requestReducer, initialState)
 
-  const { animeList, popularAnime, anime, links, loading } = state
+  const { animeList, popularAnime, anime, links, loading, notFound } = state
 
   const getPopularAnime = async (limit= 10) => {
     try{
@@ -49,6 +52,8 @@ const RequestState = ({ children }) => {
       })
       setLoading(false)
 
+      !response.data.data.length ? notFoundAnime(true) : notFoundAnime(false)
+
     } catch (e) {
       console.log(e)
       setLoading(false)
@@ -76,10 +81,31 @@ const RequestState = ({ children }) => {
 
   const setLoading = (payload) => dispatch({ type: SET_LOADING, payload: payload })
 
+  const getMoreAnime = async () => {
+    try{
+      const response = await axios.get(links.next)
+
+      dispatch({
+        type: GET_ANIME_MORE,
+        payload: [...animeList, ...response.data.data]
+      })
+
+      dispatch({
+        type: GET_LINKS,
+        payload: response.data.links
+      })
+
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
+  const notFoundAnime = (payload) => dispatch({ type: NOT_FOUND, payload: payload })
+
   return (
     <RequestContext.Provider value={{
-      getPopularAnime, search, getAnime, clearList, setLoading,
-      popularAnime, animeList, anime, links, loading
+      getPopularAnime, search, getAnime, clearList, setLoading, getMoreAnime, notFoundAnime,
+      popularAnime, animeList, anime, links, loading, notFound
     }}>
       {children}
     </RequestContext.Provider>
