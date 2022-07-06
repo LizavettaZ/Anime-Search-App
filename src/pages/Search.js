@@ -6,10 +6,12 @@ import SearchCard from '../components/SearchCard'
 import Alert from '../components/UI/Alert'
 import { RequestContext } from '../context/request/requestContect'
 import Loader from '../components/UI/Loader'
+import NotFound from "../components/NotFound";
+import ButtonGetMore from "../components/ButtonGetMore";
 
 
 const Search = () => {
-  const { loading, animeList, popularAnime } = useContext(RequestContext)
+  const { loading, animeList, popularAnime, notFound} = useContext(RequestContext)
   const request = useContext(RequestContext)
 
     useEffect(() => {
@@ -22,10 +24,12 @@ const Search = () => {
       <div className={classes.Search}>
         <Alert/>
         <SearchForm/>
-        {loading
+        { loading
           ? <Loader/>
-          : <div className={classes.search__list}>
-            {animeList.length
+          : notFound
+            ? <NotFound/>
+            :<div className={classes.search__list}>
+            { animeList.length
               ? animeList.map((anime) => (
                 <div key={anime.id}>
                   <SearchCard anime={anime}/>
@@ -39,6 +43,7 @@ const Search = () => {
             }
           </div>
         }
+        <ButtonGetMore/>
       </div>
     </Fragment>
   )
