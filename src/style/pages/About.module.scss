@@ -24,6 +24,10 @@
 
 .content__description{
   flex: 0 1 60%;
+
+  @media (max-width: $minWidth) {
+    flex: 0 1 100%;
+  }
 }
 
 .description__text {
@@ -47,5 +51,9 @@
 
   & img {
     @include adaptive-value(width, 469, 250, 1);
+  }
+  
+  @media (max-width: $minWidth) {
+    display: none;
   }
 }
