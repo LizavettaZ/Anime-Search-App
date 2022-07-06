@@ -1,9 +1,9 @@
 import React from 'react'
-import classes from '../../style/Header.module.scss'
+import classes from '../../style/components/Header.module.scss'
 import Logo from '../../img/Logo.png'
 
 
-const Header = ({zIndex}) => {
+const Header = ({ zIndex }) => {
   return (
     <div className={classes.Header} style={{ zIndex: zIndex }}>
       <div className={classes.header__img}>
