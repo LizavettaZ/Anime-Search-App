@@ -1,0 +1,14 @@
+@import "src/style/adaptive";
+@import "src/style/colors";
+@import "src/style/sizes";
+
+.NotFound{
+  text-align: center;
+
+  & p{
+    background: inherit;
+    @include adaptive-value(font-size, 30, 18, 1);
+    @include adaptive-value(line-height, 38, 22, 1);
+    color: $color_accent;
+  }
+}
