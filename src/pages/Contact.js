@@ -3,14 +3,14 @@ import classes from '../style/pages/Contact.module.scss'
 import Instagram from '../img/icons/Instagram.svg'
 import Git from '../img/icons/Git.svg'
 import LinkedIn from '../img/icons/LinkedIn.svg'
-import Form from '../components/UI/Form'
+import phone from '../img/About/phone.png'
 
 
 const Contact = () => {
   return (
     <div className={classes.Contact}>
-      <div className={classes.contact__form}>
-        <Form/>
+      <div className={classes.contact__img}>
+        <img src={phone} alt="logo"/>
       </div>
       <div className={classes.contact__description}>
         <div className={classes.description__title}>

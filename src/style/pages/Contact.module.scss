@@ -15,6 +15,10 @@
 
 .contact__description{
   flex: 0 1 50%;
+
+  @media (max-width: $middleWidth) {
+    flex: 0 1 100%;
+  }
 }
 
 .description__title{
@@ -52,6 +56,13 @@
   }
 }
 
-.contact__form{
+.contact__img{
+  display: flex;
   flex: 0 1 50%;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: $middleWidth) {
+    display: none;
+  }
 }
