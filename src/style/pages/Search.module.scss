@@ -4,11 +4,11 @@
 
 .Search{
   position: relative;
-  padding-top: 145px;
   display: flex;
   flex: 0 1 100%;
   flex-direction: column;
   align-items: center;
+  padding: 145px 10px 60px;
 }
 
 .search__list{
@@ -19,6 +19,8 @@
   gap: 30px;
   
   @media (max-width: $middleWidth) {
-    grid-template-columns: repeat(3, 285px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }

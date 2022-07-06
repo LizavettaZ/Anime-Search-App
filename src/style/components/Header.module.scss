@@ -1,7 +1,6 @@
-@import "adaptive";
-@import "nonestyle";
-@import "colors";
-@import "sizes";
+@import "src/style/adaptive";
+@import "src/style/colors";
+@import "src/style/sizes";
 
 .Header{
   position: fixed;
@@ -9,8 +8,7 @@
   height: 140px;
   display: flex;
   align-items: end;
-  padding-bottom: 20px;
-  padding-left: 16px;
+  padding: 0 16px 20px;
   border-bottom: 1px solid $color_accent_75;
 
   .header__img{
