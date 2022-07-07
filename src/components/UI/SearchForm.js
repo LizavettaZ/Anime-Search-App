@@ -9,7 +9,7 @@ const SearchForm = () => {
   const request = useContext(RequestContext)
 
   const onSubmit = useCallback( (event) => {
-    if (event.key !== 'Enter') return
+    if (event.key !== 'Enter') return null
 
     request.clearList()
 
