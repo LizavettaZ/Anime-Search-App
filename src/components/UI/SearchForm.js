@@ -8,7 +8,7 @@ const SearchForm = () => {
   const alert = useContext(AlertContext)
   const request = useContext(RequestContext)
 
-  const onSubmit = useCallback( (event) => {
+  const onSubmit = (event) => {
     if (event.key !== 'Enter') return null
 
     request.clearList()
@@ -19,7 +19,7 @@ const SearchForm = () => {
     } else {
       alert.show('Enter Anime name')
     }
-  }, [])
+  }
 
   const onChange = useCallback((event) => setValue(event.target.value), [])
 
