@@ -10,7 +10,7 @@
 .page__content{
   display: flex;
 
-  @media (max-width: $middleWidth) {
+  @media (max-width: $middleWidth){
     flex-wrap: wrap;
   }
 }
@@ -24,12 +24,12 @@
     width: 100%;
   }
 
-  @media (max-width: $middleWidth) {
+  @media (max-width: $middleWidth){
     flex: 0 1 50%;
     order: 2;
   }
 
-  @media (max-width: $minWidth) {
+  @media (max-width: $minWidth){
     flex: 0 1 100%;
     order: 1;
   }
@@ -39,12 +39,12 @@
   flex: 0 1 55%;
   padding: 25px 22px;
 
-  @media (max-width: $middleWidth) {
+  @media (max-width: $middleWidth){
     flex: 0 1 100%;
     order: 1;
   }
 
-  @media (max-width: $minWidth) {
+  @media (max-width: $minWidth){
     order: 2;
   }
 }
@@ -121,12 +121,12 @@
     @include adaptive-value(line-height, 25, 20, 1);
   }
 
-  @media (max-width: $middleWidth) {
+  @media (max-width: $middleWidth){
     flex: 0 1 50%;
     order: 3;
   }
 
-  @media (max-width: $minWidth) {
+  @media (max-width: $minWidth){
     flex: 0 1 100%;
     order: 3;
   }

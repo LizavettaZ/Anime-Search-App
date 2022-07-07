@@ -2,7 +2,6 @@
 @import "src/style/colors";
 @import "src/style/sizes";
 
-
 .SearchForm{
   display: flex;
   @include adaptive-value(width, 1000, 235, 1);

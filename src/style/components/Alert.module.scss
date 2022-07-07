@@ -1,7 +1,5 @@
-@import "src/style/adaptive";
 @import "src/style/colors";
 @import "src/style/sizes";
-@import "src/style/nonestyle";
 
 .Alert{
   position: absolute;
@@ -15,7 +13,7 @@
   @extend %red_background;
   color: white;
 
-  @media (max-width: $minWidth) {
+  @media (max-width: $minWidth){
     left: 10%;
     width: 80%;
   }

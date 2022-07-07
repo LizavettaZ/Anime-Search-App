@@ -1,6 +1,4 @@
-@import "src/style/adaptive";
 @import "src/style/colors";
-@import "src/style/sizes";
 
 .SearchCard{
   display: flex;
@@ -10,24 +8,20 @@
   align-items: center;
   align-self: center;
 
-  &Link{
-    display: flex;
-    flex-wrap: wrap;
-    color: #2778b2;
+  & a{
+    max-width: 284px;
+    white-space: normal;
+    text-align: center;
+    margin-top: 10px;
 
     &:hover{
-      color: $color_accent !important;
+      color: $color_accent;
     }
   }
 }
 
 .card__img{
   position: relative;
-
-  &img{
-
-  }
-
 }
 
 .rating{
@@ -37,6 +31,7 @@
   padding-left: 20px;
   padding-right: 6px;
   border-radius: 0 0 10px 0;
+
   &:before{
     height: 20px;
     left: 1px;
