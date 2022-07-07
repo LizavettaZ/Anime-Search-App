@@ -1,0 +1,128 @@
+@import "src/style/adaptive";
+@import "src/style/colors";
+@import "src/style/sizes";
+
+.NavMenu{
+  background-color: transparent;
+  white-space: nowrap;
+  z-index: 2;
+  position: fixed;
+  max-height: 44px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  @include adaptive-value(padding-top, 14, 55, 1);
+  @include adaptive-value(padding-bottom, 14, 55, 1);
+  @include adaptive-value(padding-right, 123, 10, 1);
+  @include adaptive-value(padding-left, 123, 80, 1);
+}
+
+.NavMenu_list{
+  display: flex;
+  align-items: center;
+  gap: 0 10px;
+
+  @media screen and (max-width: $minWidth) {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px 0;
+    transform: translateX(100%);
+    transition: transform 0.3s;
+  }
+}
+
+.active{
+  transform: translateX(0);
+}
+
+.list__item{
+  color: $color_text;
+  @include adaptive-value(font-size, 15, 20, 1);
+  @include adaptive-value(line-height, 19, 22, 1);
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+
+  @media screen and (max-width: $minWidth) {
+    @include adaptive-value(font-size, 20, 30, 1);
+    @include adaptive-value(line-height, 22,45, 1);
+  }
+
+  & a{
+    &:hover{
+      color: $color_accent;
+    }
+  }
+}
+
+.list__item:nth-child(2n) {
+
+  &:before{
+    content: '';
+    width: 23px;
+    border: 1px solid $color_text;
+    margin-right: 10px;
+  }
+
+  &:after{
+    content: '';
+    width: 23px;
+    border: 1px solid $color_text;
+    margin-left: 10px;
+  }
+
+  @media screen and (max-width: $minWidth) {
+    &:before{
+      display: none;
+    }
+
+    &:after{
+      display: none;
+    }
+  }
+}
+
+.BurgerMenu{
+  position: relative;
+  width: 40px;
+  height: 30px;
+  margin: auto 20px;
+  display: none;
+
+  & span{
+    position: absolute;
+    top: 13px;
+    width: 40px;
+    height: 4px;
+    background-color: $color_text;
+  }
+  
+  @media screen and (max-width: $minWidth) {
+    display: block;
+    z-index: 3;
+  }
+}
+
+.BurgerMenu:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 40px;
+  height: 4px;
+  background-color: $color_text;
+}
+
+.BurgerMenu:after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 40px;
+  height: 4px;
+  background-color: $color_text;
+}
