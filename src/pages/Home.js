@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useEffect } from 'react'
+import React, { Fragment, memo, useContext, useEffect } from 'react'
 import Header from '../components/UI/Header'
 import classes from '../style/pages/Home.module.scss'
 import Button from '../components/UI/Button'
@@ -21,7 +21,7 @@ const Home = () => {
       <div className={classes.Home}>
         <div className={classes.home__content}>
           <div className={classes.content__list}>
-            {loading
+            { loading
               ? <Loader/>
               : popularAnime.map((anime) => (
                 <div key={anime.id}>
@@ -39,4 +39,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default memo(Home)

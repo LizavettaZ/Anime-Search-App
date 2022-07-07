@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react'
+import React, { memo, useCallback} from 'react'
 import classes from '../../../style/components/Menu.module.scss'
 
 const BurgerMenu = ({ menuActive, setMenuActive }) => {
@@ -12,4 +12,4 @@ const BurgerMenu = ({ menuActive, setMenuActive }) => {
   )
 }
 
-export default BurgerMenu
+export default memo(BurgerMenu)

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import classes from '../style/components/HomeCard.module.scss'
 import { Link } from 'react-router-dom'
 
@@ -8,13 +8,13 @@ const HomeCard = ({ anime }) => {
 
   return (
     <div className={classes.HomeCard}>
-      <div className={classes.card__img}>
+      <div>
         <Link to= {'anime/:' + anime.id}>
-          <img src={posterImage.medium} alt = "Anime picture"/>
+          <img src={posterImage.medium} alt="Anime picture"/>
         </Link>
       </div>
     </div>
   )
 }
 
-export default HomeCard
+export default memo(HomeCard)

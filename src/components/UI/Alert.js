@@ -1,19 +1,15 @@
-import React, {useContext} from 'react'
+import React, { memo, useContext } from 'react'
 import classes from '../../style/components/Alert.module.scss'
-import {AlertContext} from '../../context/alert/alertContext'
+import { AlertContext } from '../../context/alert/alertContext'
 
 const Alert = () => {
-  const {alert, hide} = useContext(AlertContext)
+  const { alert, hide } = useContext(AlertContext)
 
-  if(!alert) return null
-
-  const d = [
-    classes.Alert,
-  ]
+  if (!alert) return
 
   return (
     <div
-      className={d.join(' ')}
+      className={classes.Alert}
       role="alert">
       {alert.text}
       <button type="button" className= {classes.btnClose} aria-label="Close" onClick={hide}>
@@ -23,4 +19,4 @@ const Alert = () => {
   )
 }
 
-export default Alert
+export default memo(Alert)

@@ -1,6 +1,7 @@
-import React, {Fragment, useContext} from 'react'
+import React, { Fragment, useContext, memo } from 'react'
 import classes from '../style/components/ButtonGetMore.module.scss'
 import { RequestContext } from '../context/request/requestContect'
+
 
 const ButtonGetMore = () => {
   const { animeList, links } = useContext(RequestContext)
@@ -20,4 +21,4 @@ const ButtonGetMore = () => {
   )
 }
 
-export default ButtonGetMore
+export default memo(ButtonGetMore)

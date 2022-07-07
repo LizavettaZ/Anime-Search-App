@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import classes from '../../style/components/Header.module.scss'
 import Logo from '../../img/Logo.png'
 
@@ -14,4 +14,4 @@ const Header = ({ zIndex }) => {
   )
 }
 
-export default Header
+export default memo(Header)

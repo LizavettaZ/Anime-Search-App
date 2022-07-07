@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useEffect } from 'react'
+import React, { Fragment, memo, useContext, useEffect } from 'react'
 import classes from '../style/pages/Search.module.scss'
 import Header from '../components/UI/Header'
 import SearchForm from '../components/UI/SearchForm'
@@ -6,12 +6,12 @@ import SearchCard from '../components/SearchCard'
 import Alert from '../components/UI/Alert'
 import { RequestContext } from '../context/request/requestContect'
 import Loader from '../components/UI/Loader'
-import NotFound from "../components/NotFound";
-import ButtonGetMore from "../components/ButtonGetMore";
+import NotFound from '../components/NotFound'
+import ButtonGetMore from '../components/ButtonGetMore'
 
 
 const Search = () => {
-  const { loading, animeList, popularAnime, notFound} = useContext(RequestContext)
+  const { loading, animeList, popularAnime, notFound } = useContext(RequestContext)
   const request = useContext(RequestContext)
 
     useEffect(() => {
@@ -43,10 +43,10 @@ const Search = () => {
             }
           </div>
         }
-        <ButtonGetMore/>
+        { animeList.length > 9 && <ButtonGetMore/> }
       </div>
     </Fragment>
   )
 }
 
-export default Search
+export default memo(Search)

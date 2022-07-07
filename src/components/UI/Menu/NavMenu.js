@@ -1,4 +1,4 @@
-import React, {Fragment, useCallback, useState} from 'react'
+import React, { Fragment, memo, useCallback, useState } from 'react'
 import classes from '../../../style/components/Menu.module.scss'
 import { NavLink } from 'react-router-dom'
 import BurgerMenu from './BurgerMenu'
@@ -34,4 +34,4 @@ const NavMenu = () => {
   )
 }
 
-export default NavMenu
+export default memo(NavMenu)

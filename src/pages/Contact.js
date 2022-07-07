@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import classes from '../style/pages/Contact.module.scss'
 import Instagram from '../img/icons/Instagram.svg'
 import Git from '../img/icons/Git.svg'
@@ -27,13 +27,13 @@ const Contact = () => {
           </a>
         </div>
         <div className={classes.description__links}>
-          <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
+          <a href="https://instagram.com" target="_blank" rel="noreferrer">
             <img src={Instagram} alt="instagram" />
           </a>
-          <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
+          <a href="https://github.com/LizavettaZ" target="_blank" rel="noreferrer">
             <img src={Git} alt="instagram" />
           </a>
-          <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
+          <a href="https://linkedin.com" target="_blank" rel="noreferrer">
             <img src={LinkedIn} alt="instagram" />
           </a>
         </div>
@@ -42,4 +42,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default memo(Contact)

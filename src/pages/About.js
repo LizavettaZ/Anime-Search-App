@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { memo } from 'react'
 import classes from '../style/pages/About.module.scss'
 import phone from '../img/About/phone.png'
 import Button from '../components/UI/Button'
+
 
 const About = () => {
   return (
@@ -33,4 +34,4 @@ const About = () => {
   )
 }
 
-export default About
+export default memo(About)

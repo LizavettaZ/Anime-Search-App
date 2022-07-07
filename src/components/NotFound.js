@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import classes from '../style/components/NotFound.module.scss'
 import Search from '../img/Search/search.png'
 
@@ -12,4 +12,4 @@ const NotFound = () => {
   )
 }
 
-export default NotFound
+export default memo(NotFound)

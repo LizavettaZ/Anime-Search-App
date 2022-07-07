@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React, { memo, useReducer} from 'react'
 import { RequestContext } from './requestContect'
 import { requestReducer } from './requestReducer'
 import { CLEAR_ANIME, GET_ANIME, NOT_FOUND, GET_LINKS, GET_POPULAR_ANIME, SEARCH_ANIME_LIST,
@@ -112,4 +112,4 @@ const RequestState = ({ children }) => {
   )
 }
 
-export default RequestState
+export default memo(RequestState)

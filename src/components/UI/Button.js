@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import classes from '../../style/components/Button.module.scss'
 import { NavLink } from 'react-router-dom'
 
@@ -10,4 +10,4 @@ const Button = () => {
   )
 }
 
-export default Button
+export default memo(Button)

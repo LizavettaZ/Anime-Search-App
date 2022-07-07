@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { memo } from 'react'
 import classes from '../style/components/SearchCard.module.scss'
 import { Link } from 'react-router-dom'
 
 
-const SearchCard = ({anime}) => {
+const SearchCard = ({ anime }) => {
   const { averageRating, canonicalTitle, posterImage } = anime.attributes
 
   return (
@@ -17,4 +17,4 @@ const SearchCard = ({anime}) => {
   )
 }
 
-export default SearchCard
+export default memo(SearchCard)
